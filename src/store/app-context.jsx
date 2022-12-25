@@ -5,8 +5,8 @@ const AppContext = React.createContext({
   isLoggedIn: false,
   login: (token, userName, location) => {},
   logout: () => {},
-  Username: "",
-  location: "",
+  Username: "",   //username register sign up and login
+  location: "",   //build
   payload: {
     weight: "",
     faringSiza: "",
@@ -27,7 +27,7 @@ export const AppContextProvider = (props) => {
   const userIsLoggedIn = !!token;
 
   function loginHandeler(token, userName, location) {
-    localStorage.setItem('token', token );
+    localStorage.setItem('token', token);
     setUserName(userName);
     setLoc(location)
     setToken(token);
@@ -61,6 +61,7 @@ export const AppContextProvider = (props) => {
       {props.children}
     </AppContext.Provider>
   );
+  
 };
 
 export default AuthContext;
