@@ -31,7 +31,9 @@ function Hero() {
             space
             <br /> community.
           </p>
-          <Button>Get Started</Button>
+          <Link to="/build">
+            <Button>Get Started</Button>
+          </Link>
           <div className="boxes">
             <Box className="large-box">
               <img className="rocket" src={rocket} />
