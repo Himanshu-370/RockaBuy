@@ -32,12 +32,9 @@ function Hero() {
             space
             <br /> community.
           </p>
-<<<<<<< HEAD
-=======
           <Link to="/build">
             <Button>Get Started</Button>
           </Link>
->>>>>>> c07d6fd5877ac9380806d029630039e9b1db5a44
           <div className="boxes">
             <Box className="large-box">
               <img className="rocket" src={rocket} />
