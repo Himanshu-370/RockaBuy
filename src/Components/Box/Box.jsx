@@ -2,7 +2,7 @@ import React from 'react';
 import './Box.css'
  
 function Box (props){
-   return <div className={`${props.class} box`}>
+   return <div className={`${props.className} box`}>
     {props.children}
    </div>;
 }
