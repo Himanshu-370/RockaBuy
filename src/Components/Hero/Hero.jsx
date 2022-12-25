@@ -8,6 +8,7 @@ import rocket from "../../assets/Rocket.png";
 import "./Hero.css";
 import Button from "../Button/Button";
 import Box from "../Box/Box";
+import { Link } from "react-router-dom";
 
 function Hero() {
   return (
@@ -31,7 +32,7 @@ function Hero() {
             space
             <br /> community.
           </p>
-          <Button>Get Started</Button>
+          <Link to="/build"><Button>Get Started</Button></Link>
           <div className="boxes">
             <Box className="large-box">
               <img className="rocket" src={rocket} />

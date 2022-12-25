@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import moon from "../images/moon-build.png";
 import earth from "../images/earth.png";
 import rocket from "../images/rocket.png";
