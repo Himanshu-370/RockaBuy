@@ -19,7 +19,7 @@ function Payload() {
 
   const appCtx = useContext(AppContext);
 
-  appCtx.setpayload({...appctx.payload, weight: weight, faringSize: fairingSize});
+  appCtx.setpayload({...appCtx.payload, weight: weight, faringSize: fairingSize});
 
   const handleInputChange = (event) => {
     event.target.name == "weight"
