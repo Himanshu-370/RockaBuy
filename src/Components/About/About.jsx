@@ -11,7 +11,7 @@ function About() {
             <div className="">
               <h3>About Rockabuy</h3>
               <p>
-                RockaBuy was founded by Himanshu Singh with the vision of
+                RockaBuy was founded by Himanshu Singh and others with the vision of
                 enabling a future where millions of people can send their
                 customized rockets to different regions of the Moon and be a
                 part of the Space Community.
@@ -37,9 +37,9 @@ function About() {
             <div className="">
               <h3>RockaBuy Leadership</h3>
               <p style={{ fontSize: "1rem" }}>
-                RockaBuy is led by Administrator Himanshu Singh, who founded on
+                RockaBuy is led by Administrator Himanshu Singh, who founded it with Shiven , Akansha and Shalini on
                 Dec 9, 2021.
-                <br /> Himanshu is a College Student.
+                <br /> All of us are college students
               </p>
             </div>
           </div>
