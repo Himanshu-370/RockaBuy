@@ -1,6 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
+import { Link } from "react-router-dom";
 
 import "./Orbit.css";
+
+import AppContext from "../../store/app-context";
 
 import moon from "../images/moon-build.png";
 import earth from "../images/orbit_earth.png";
@@ -21,7 +24,6 @@ import escClicked from "../images/finalState/esc-clicked.png";
 import synClicked from "../images/finalState/syn-clicked.png";
 import polarClicked from "../images/finalState/polar-clicked.png";
 import OrbitNames from "./OrbitNames";
-import { Link } from "react-router-dom";
 
 function Orbit() {
   //get the orbit name from somehere around here
@@ -43,8 +45,17 @@ function Orbit() {
 
   const [isthatdisable, setDisable] = useState(true);
 
+  const [orbit, setOrbit] = useState('')
+
+  const appctx = useContext(AppContext);
+
+  useEffect(()=>{
+    appctx.setpayload({...appctx.payload , orbit: orbit})
+  })
+
   function handlegeo() {
     if (geoImg == geo) {
+      setOrbit('GEO')
       console.log(geoImg);
       setgeoImg(geoClicked);
       setgtoImg(gto);
@@ -62,6 +73,7 @@ function Orbit() {
       setsynActive('');
       setpolarActive('')
     } else {
+      setOrbit('')
       setgeoImg(geo);
       setgtoImg(gto);
       setmeoImg(meo);
@@ -76,6 +88,7 @@ function Orbit() {
 
   function handlegto() {
     if (gtoImg == gto) {
+      setOrbit('GTO')
       setgtoImg(gtoClicked);
       setgeoImg(geo);
       setmeoImg(meo);
@@ -92,6 +105,7 @@ function Orbit() {
       setsynActive('');
       setpolarActive('')
     } else {
+      setOrbit('')
       setgtoImg(gto);
       setgeoImg(geo);
       setmeoImg(meo);
@@ -106,6 +120,7 @@ function Orbit() {
 
   function handlemeo() {
     if (meoImg == meo) {
+      setOrbit('MEO')
       setmeoImg(meoClicked);
       setgtoImg(gto);
       setgeoImg(geo);
@@ -122,6 +137,8 @@ function Orbit() {
       setsynActive('');
       setpolarActive('')
     } else {
+      setOrbit('')
+
       setmeoImg(meo);
       setgtoImg(gto);
       setgeoImg(geo);
@@ -137,6 +154,8 @@ function Orbit() {
 
   function handleleo() {
     if (leoImg == leo) {
+      setOrbit('LEO')
+
       setleoImg(leoClicked);
       setgtoImg(gto);
       setgeoImg(geo);
@@ -153,6 +172,8 @@ function Orbit() {
       setsynActive('');
       setpolarActive('')
     } else {
+      setOrbit('')
+
       setgtoImg(gto);
       setgeoImg(geo);
       setmeoImg(meo);
@@ -167,6 +188,8 @@ function Orbit() {
 
   function handleesc() {
     if (escImg == esc) {
+      setOrbit('Earth Escape')
+
       setescImg(escClicked);
       setgtoImg(gto);
       setgeoImg(geo);
@@ -183,6 +206,8 @@ function Orbit() {
       setsynActive('');
       setpolarActive('')
     } else {
+      setOrbit('')
+
       setescImg(esc);
       setgtoImg(gto);
       setgeoImg(geo);
@@ -197,6 +222,8 @@ function Orbit() {
 
   function handlesyn() {
     if (synImg == sunSync) {
+      setOrbit('Sun Sync')
+
       setsynImg(synClicked);
       setgtoImg(gto);
       setgeoImg(geo);
@@ -227,6 +254,8 @@ function Orbit() {
 
   function handlepolar() {
     if (polarImg == polar) {
+      setOrbit('Polar')
+
       setpolarImg(polarClicked);
       setgtoImg(gto);
       setgeoImg(geo);
@@ -243,6 +272,8 @@ function Orbit() {
       setescActive('');
       setsynActive('');
     } else {
+      setOrbit('')
+
       setgtoImg(gto);
       setgeoImg(geo);
       setmeoImg(meo);
@@ -281,6 +312,7 @@ function Orbit() {
       <div className="orbit-content">
         <h2>ORBIT</h2> <br />
         <h3>CORE SERVICE(EAST COAST)</h3>
+        <OrbitNames />
         <div className="row">
           <OrbitButton handleClick={handlegto} activeClass={gtoActive}>
             GTO
