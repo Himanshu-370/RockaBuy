@@ -38,7 +38,7 @@ function About() {
               <h3>RockaBuy Leadership</h3>
               <p style={{ fontSize: "1rem" }}>
                 RockaBuy is led by Administrator Himanshu Singh, who founded it with Shiven , Akansha and Shalini on
-                Dec 9, 2021.
+                Dec 25, 2022.
                 <br /> All of us are college students
               </p>
             </div>
