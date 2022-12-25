@@ -1,13 +1,16 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useContext, useEffect } from "react";
 import Button from "../Button/Button";
 import { useHistory } from "react-router-dom";
 import "./login.css";
+
+import AppContext from "../../store/app-context";
 
 const Login = () => {
   //context username
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+
   const history = useHistory();
   function handleChange(event) {
     const { type, value } = event.target;
@@ -33,6 +36,13 @@ const Login = () => {
     window.alert("Login Successful");
     history.push("/Build");
   };
+
+  const appctx = useContext(AppContext)
+
+  useEffect(()=>{
+    appctx.setusername(username);
+  }, [username])
+
   return (
     <div>
       <form onSubmit={handleSubmit} action="" className="login">

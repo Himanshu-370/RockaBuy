@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import moon from "../images/moon-build.png";
 import earth from "../images/earth.png";
 import rocket from "../images/rocket.png";
@@ -8,14 +8,24 @@ import "./LaunchDate.css";
 import { Link } from "react-router-dom";
 import path from "../images/arrow.png";
 
+import AppContext from "../../store/app-context";
+
 const LaunchDate = () => {
   //context get it from here
   const [time, setTime] = React.useState({year : "", quarter : ""})
+
+  const appctx = useContext(AppContext)
+
   function handleClick(event)
   {
     event.target.name == "year" ? setTime(prevTime => ({...prevTime, year : event.target.value}) ) : setTime(prevTime => ({...prevTime, quarter : event.target.value}) ) 
   }
   console.log(time)
+
+  useEffect(()=>{
+    appctx.settime(time);
+  }, [time])
+
   return (
     <div className="build-launch">
       <img className="earth" src={earth} alt="" />

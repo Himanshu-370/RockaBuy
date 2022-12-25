@@ -1,26 +1,32 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import Button from "../Button/Button";
 import "./Payload.css";
 
 import { Link } from "react-router-dom";
+import AppContext from "../../store/app-context";
 
 function Payload() {
-  
   const [inputValue, setInputValue] = useState("");
   const [buttonColor, setButtonColor] = useState({
     background: "#bebebe",
     border: "none",
   });
 
-// use context get weight, faring size from here
+  // use context get weight, faring size from here
 
-const [weight, setweight] = useState(0)
-const [fairingSize, setFaringSize] = useState('4 meter')
+  const [weight, setweight] = useState(0);
+  const [fairingSize, setFaringSize] = useState("4 meter");
+
+  const appCtx = useContext(AppContext);
+
+  appCtx.setpayload({...appctx.payload, weight: weight, faringSize: fairingSize});
 
   const handleInputChange = (event) => {
-    event.target.name == "weight" ? setweight(event.target.value) : setFaringSize(event.target.value)
+    event.target.name == "weight"
+      ? setweight(event.target.value)
+      : setFaringSize(event.target.value);
     setInputValue(event.target.value);
-    
+
     if (event.target.name == "weight" && event.target.value) {
       setButtonColor({ background: "#ff005c" });
     } else {
