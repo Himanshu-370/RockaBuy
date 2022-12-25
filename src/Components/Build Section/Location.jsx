@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
 import "./Build.css";
+import { useHistory } from "react-router-dom";
 
 export default function Location(props) {
+  const history = useHistory();
   const line = {
     width: "calc(25vh*1.41)",
     height: `18%`,
@@ -9,6 +11,12 @@ export default function Location(props) {
     borderBottom: `2px solid #00A3FF`,
     transformOrigin: `left`,
   };
+  function handleClick(event)
+  {
+    props.setLocation(props.area.name)
+    console.log('location set')
+    history.push("/rocket");
+  }
   const linemargin =
     props.direction == "left"
       ? { marginRight: props.area.marginR }
@@ -19,10 +27,10 @@ export default function Location(props) {
         <div
           className={`${props.direction} name`}
           style={{ marginLeft: props.area.marginL }}
-        >
-          <Link to="/rocket" style={{ margin: "0" }}>
+          onClick={handleClick}
+        >          <Link style={{ margin: "0" }}>
             {props.area.name}
-          </Link>
+                  </Link>
         </div>
       )}
       <div
@@ -38,8 +46,9 @@ export default function Location(props) {
         <div
           className={`${props.direction} name`}
           style={{ marginRight: props.area.marginR }}
+          onClick={handleClick}
         >
-          <Link to="/rocket" style={{ margin: "0" }}>
+          <Link style={{ margin: "0" }}>
             {props.area.name}
           </Link>
         </div>

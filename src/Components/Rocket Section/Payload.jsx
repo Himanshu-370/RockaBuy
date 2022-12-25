@@ -12,9 +12,16 @@ function Payload() {
     border: "none",
   });
 
+// use context get weight, faring size from here
+
+const [weight, setweight] = useState(0)
+const [fairingSize, setFaringSize] = useState('4 meter')
+
   const handleInputChange = (event) => {
+    event.target.name == "weight" ? setweight(event.target.value) : setFaringSize(event.target.value)
     setInputValue(event.target.value);
-    if (event.target.value) {
+    
+    if (event.target.name == "weight" && event.target.value) {
       setButtonColor({ background: "#ff005c" });
     } else {
       setButtonColor({
@@ -79,7 +86,7 @@ function Payload() {
           </div>
         </div>
         <div className="submit-btn">
-          <Link to="/launch-date" style={{ margin: "0" }}>
+          <Link to="/orbit" style={{ margin: "0" }}>
             <Button disabled={!inputValue} style={buttonColor}>
               Next &rarr;
             </Button>
