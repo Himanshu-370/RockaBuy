@@ -48,14 +48,17 @@ export const AppContextProvider = (props) => {
 
   function setlocation(location){
     setLoc(location);
+    localStorage.setItem('loaction', location)
   }
 
   function setpayload(payload){
     setPayload(payload);
+    localStorage.setItem('payload', payload)
   }
 
   function settime(time){
     setTime(time)
+    localStorage.setItem('time', time)
   }
 
   const contextvalue = {
