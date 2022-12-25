@@ -269,6 +269,7 @@ function Orbit() {
       <div className="orbit-content">
         <h2>ORBIT</h2> <br />
         <h3>CORE SERVICE(EAST COAST)</h3>
+        <OrbitNames />
         <div className="row">
           <OrbitButton handleClick={handlegto} activeClass={gtoActive}>
             GTO
