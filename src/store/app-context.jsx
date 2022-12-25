@@ -48,7 +48,7 @@ export const AppContextProvider = (props) => {
 
   function setlocation(location){
     setLoc(location);
-    localStorage.setItem('loaction', location)
+    localStorage.setItem('loaction1', location)
   }
 
   function setpayload(payload){
