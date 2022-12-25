@@ -14,16 +14,13 @@ export default function Build()
     const Style = {
         backgroundImage : `url(${moon})`,
     }
-    const line = {
-        width: 'calc(25vh*1.41)',
-        height : `18%`,
-        marginRight: '4vw',
-        borderBottom: `3px solid #00A3FF`,
-        transformOrigin: `left`,
-           
-    }
-    const locationsLeft = regionsLeft.map(location => <Location area = {location} direction = 'left' style = {{height : `15vh`}} />)
-    const locationsRight = regionsRight.map(location => <Location area = {location} direction = 'right' style = {{height : `18vh`}}/>)
+    //Context location from here
+    
+    const [contextLocation, setContextLocation] = useState('')
+    console.log(location, contextLocation)
+
+    const locationsLeft = regionsLeft.map(location => <Location area = {location} setLocation = {setContextLocation} direction = 'left' style = {{height : `15vh`}} />)
+    const locationsRight = regionsRight.map(location => <Location area = {location} setLocation = {setContextLocation} direction = 'right' style = {{height : `18vh`}}/>)
     return (
         <div className="build" style={Style}>
             <div className="build-title"> Where TO ? </div>

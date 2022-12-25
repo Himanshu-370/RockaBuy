@@ -23,6 +23,7 @@ import polarClicked from "../images/finalState/polar-clicked.png";
 import OrbitNames from "./OrbitNames";
 
 function Orbit() {
+  //get the orbit name from somehere around here
   const [gtoImg, setgtoImg] = useState(gto);
   const [geoImg, setgeoImg] = useState(geo);
   const [meoImg, setmeoImg] = useState(meo);
