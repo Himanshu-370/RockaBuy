@@ -1,9 +1,12 @@
 import { Link } from "react-router-dom";
 import "./Build.css";
 import { useHistory } from "react-router-dom";
+import AppContext from "../../store/app-context";
+import {useContext} from 'react'
 
 export default function Location(props) {
   const history = useHistory();
+  const appctx = useContext(AppContext)
   const line = {
     width: "calc(25vh*1.41)",
     height: `18%`,
@@ -14,7 +17,8 @@ export default function Location(props) {
   function handleClick(event)
   {
     props.setLocation(props.area.name)
-    console.log('location set')
+    appctx.setlocation(props.area.name)
+    console.log('location set', appctx.location)
     history.push("/rocket");
   }
   const linemargin =

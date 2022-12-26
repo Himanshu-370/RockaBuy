@@ -24,6 +24,9 @@ const LaunchDate = () => {
   console.log(time);
 
   useEffect(() => {
+    console.log('changing time')
+    console.log(appctx.time);
+
     appctx.settime(time);
   }, [time]);
 

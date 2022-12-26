@@ -5,8 +5,11 @@ import buttonMinus from "../../assets/button-minus.png";
 import rocketTypeData from "./RocketData";
 import moon from "../images/moon-build.png";
 
+import AppContext from "../../store/app-context";
+
 import "./Rocket.css";
 import Payload from "./Payload";
+
 
 export default function Rocket() {
   const Style = {

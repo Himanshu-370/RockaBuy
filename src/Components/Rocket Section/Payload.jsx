@@ -35,6 +35,16 @@ function Payload() {
         border: "none",
       });
     }
+
+    console.log('changing payload')
+
+    appCtx.setpayload({
+      weight: weight,
+      faringSize: fairingSize,
+    });
+
+    console.log(appCtx.payload);
+
   };
 
   return (

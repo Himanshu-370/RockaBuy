@@ -16,12 +16,22 @@ import Rocket from "./Components/Rocket Section/Rocket";
 
 import Login from "./Components/Get Started/Login";
 import SignUp from "./Components/Get Started/SignUp";
+import { AppContextProvider } from "./store/app-context";
+
+var location = localStorage.getItem('location1')
+var payload = localStorage.getItem('payload')
+var time = localStorage.getItem('time')
+
+console.log(location, payload, time)
 
 function App() {
   return (
+    <AppContextProvider>
     <BrowserRouter>
       <div className="App">
         <NavBar />
+
+
 
         <Route path="/" exact>
           <Hero />
@@ -64,6 +74,7 @@ function App() {
         </Route>
       </div>
     </BrowserRouter>
+    </AppContextProvider>
   );
 }
 
